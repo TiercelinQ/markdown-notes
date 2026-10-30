@@ -4,6 +4,8 @@ All notable changes to this project are documented in this file.
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
 ## [Unreleased]
+### Added
+- MIT license (`LICENSE`), with the third-party notices listed in the README.
 
 ## [1.1.0] - 2026-10-30
 ### Added

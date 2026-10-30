@@ -117,9 +117,25 @@ The `.claude/settings.json` Stop hook runs `tools/stop-format.ps1` at the end of
 dotnet test
 ```
 
+## License
+
+Released under the [MIT License](LICENSE), copyright (c) 2026 Quentin Tiercelin. The license covers the source code and the application icon (`app_icon/icon.png`).
+
 ## Third-party notices
 
 - Mermaid 11.17.2 (MIT), embedded as `src/App.Wpf/Assets/mermaid.min.js`, license in `Assets/mermaid.LICENSE.txt`. SHA-256 of the bundle: `581ED7D74BD9048D0E3A91363927D72EF22942D7722546B27F7CC29E35390EB8`. To upgrade, replace both files from the npm `mermaid` package (`dist/mermaid.min.js`), update this hash and run the tests.
+- NuGet packages compiled into the published executable. Versions are in `Directory.Packages.props`; each license is the one declared in the package.
+
+  | Package | License |
+  | ------- | ------- |
+  | WPF-UI | MIT |
+  | CommunityToolkit.Mvvm | MIT |
+  | Microsoft.Extensions.Hosting | MIT |
+  | Serilog.Extensions.Hosting, Serilog.Sinks.File, Serilog.Sinks.Debug | Apache-2.0 |
+  | Markdig | BSD-2-Clause |
+  | Microsoft.Web.WebView2 | Microsoft software license terms (`LICENSE.txt` in the package) |
+
+- The self-contained publish also embeds the .NET runtime (MIT). Test-only packages (xUnit, NSubstitute, Microsoft.NET.Test.Sdk) are not distributed.
 
 ## Palette
 
