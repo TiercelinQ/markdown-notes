@@ -1,0 +1,22 @@
+<UserControl x:Class="MarkdownNotes.Views.PreviewView"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             xmlns:behaviors="clr-namespace:MarkdownNotes.Views.Behaviors">
+  <Border Style="{StaticResource PreviewHostStyle}">
+    <Grid>
+      <wv2:WebView2CompositionControl Style="{StaticResource PreviewWebViewStyle}"
+                                      AutomationProperties.Name="{Binding Loc[Preview_Name]}"
+                                      behaviors:WebViewBehavior.UserDataFolder="{Binding UserDataFolder}"
+                                      behaviors:WebViewBehavior.IsAttached="True"
+                                      behaviors:WebViewBehavior.Html="{Binding Html}"
+                                      behaviors:WebViewBehavior.DocumentFolder="{Binding DocumentFolder}"
+                                      behaviors:WebViewBehavior.IsDarkTheme="{Binding IsDarkTheme}"
+                                      behaviors:WebViewBehavior.Error="{Binding WebViewError, Mode=OneWayToSource}"
+                                      behaviors:WebViewBehavior.HeadingScrollIndex="{Binding HeadingScrollIndex}"
+                                      behaviors:WebViewBehavior.HeadingScrollVersion="{Binding HeadingScrollVersion}" />
+      <TextBlock Style="{StaticResource PreviewUnavailableTextStyle}" Text="{Binding Loc[Preview_Unavailable]}" />
+    </Grid>
+  </Border>
+</UserControl>

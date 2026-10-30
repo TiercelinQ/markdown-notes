@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_Fichier</value>
+  </data>
+  <data name="Menu_File_New" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="Menu_File_Open" xml:space="preserve">
+    <value>Ouvrir...</value>
+  </data>
+  <data name="Menu_File_OpenFolder" xml:space="preserve">
+    <value>Ouvrir un dossier...</value>
+  </data>
+  <data name="Menu_File_Recent" xml:space="preserve">
+    <value>Fichiers récents</value>
+  </data>
+  <data name="Menu_File_Recent_None" xml:space="preserve">
+    <value>(aucun)</value>
+  </data>
+  <data name="Menu_File_Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Menu_File_SaveAs" xml:space="preserve">
+    <value>Enregistrer sous...</value>
+  </data>
+  <data name="Menu_File_Exit" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_Édition</value>
+  </data>
+  <data name="Menu_Edit_Undo" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Menu_Edit_Redo" xml:space="preserve">
+    <value>Rétablir</value>
+  </data>
+  <data name="Menu_Edit_Cut" xml:space="preserve">
+    <value>Couper</value>
+  </data>
+  <data name="Menu_Edit_Copy" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="Menu_Edit_Paste" xml:space="preserve">
+    <value>Coller</value>
+  </data>
+  <data name="Menu_Edit_Find" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Menu_Edit_Replace" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="Menu_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="Format_Bold" xml:space="preserve">
+    <value>Gras</value>
+  </data>
+  <data name="Format_Italic" xml:space="preserve">
+    <value>Italique</value>
+  </data>
+  <data name="Format_Heading1" xml:space="preserve">
+    <value>Titre 1</value>
+  </data>
+  <data name="Format_Heading2" xml:space="preserve">
+    <value>Titre 2</value>
+  </data>
+  <data name="Format_Heading3" xml:space="preserve">
+    <value>Titre 3</value>
+  </data>
+  <data name="Format_BulletList" xml:space="preserve">
+    <value>Liste à puces</value>
+  </data>
+  <data name="Format_NumberedList" xml:space="preserve">
+    <value>Liste numérotée</value>
+  </data>
+  <data name="Format_Link" xml:space="preserve">
+    <value>Lien</value>
+  </data>
+  <data name="Format_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Format_Quote" xml:space="preserve">
+    <value>Citation</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_Affichage</value>
+  </data>
+  <data name="View_Mode_Split" xml:space="preserve">
+    <value>Éditeur et aperçu</value>
+  </data>
+  <data name="View_Mode_Editor" xml:space="preserve">
+    <value>Éditeur seul</value>
+  </data>
+  <data name="View_Mode_Preview" xml:space="preserve">
+    <value>Aperçu seul</value>
+  </data>
+  <data name="View_Explorer" xml:space="preserve">
+    <value>Explorateur et plan</value>
+  </data>
+  <data name="View_Theme" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="View_Theme_Light" xml:space="preserve">
+    <value>Clair</value>
+  </data>
+  <data name="View_Theme_Dark" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="Menu_Language" xml:space="preserve">
+    <value>_Langue</value>
+  </data>
+  <data name="Language_French" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Explorer_Title" xml:space="preserve">
+    <value>Explorateur</value>
+  </data>
+  <data name="Explorer_Refresh" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="Explorer_Empty" xml:space="preserve">
+    <value>Aucun dossier ouvert</value>
+  </data>
+  <data name="Explorer_OpenFolder" xml:space="preserve">
+    <value>Ouvrir un dossier</value>
+  </data>
+  <data name="Outline_Title" xml:space="preserve">
+    <value>Plan</value>
+  </data>
+  <data name="Outline_Empty" xml:space="preserve">
+    <value>Aucun titre dans le document</value>
+  </data>
+  <data name="Pane_Collapse" xml:space="preserve">
+    <value>Réduire</value>
+  </data>
+  <data name="Pane_Expand" xml:space="preserve">
+    <value>Développer</value>
+  </data>
+  <data name="Find_Query" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Find_Replacement" xml:space="preserve">
+    <value>Remplacer par</value>
+  </data>
+  <data name="Find_MatchCase" xml:space="preserve">
+    <value>Respecter la casse</value>
+  </data>
+  <data name="Find_Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Find_Previous" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="Find_Replace" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="Find_ReplaceAll" xml:space="preserve">
+    <value>Tout remplacer</value>
+  </data>
+  <data name="Find_Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Find_NoMatch" xml:space="preserve">
+    <value>Aucun résultat</value>
+  </data>
+  <data name="Find_Replaced" xml:space="preserve">
+    <value>{0} remplacement(s)</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Prêt</value>
+  </data>
+  <data name="Status_Modified" xml:space="preserve">
+    <value>Modifié</value>
+  </data>
+  <data name="Status_LineColumn" xml:space="preserve">
+    <value>Ln {0}, Col {1}</value>
+  </data>
+  <data name="Status_Untitled" xml:space="preserve">
+    <value>Sans titre</value>
+  </data>
+  <data name="Status_Opened" xml:space="preserve">
+    <value>{0} ouvert</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} enregistré</value>
+  </data>
+  <data name="Unsaved_Title" xml:space="preserve">
+    <value>Modifications non enregistrées</value>
+  </data>
+  <data name="Unsaved_Message" xml:space="preserve">
+    <value>Enregistrer les modifications de {0} ?</value>
+  </data>
+  <data name="Unsaved_Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Unsaved_Discard" xml:space="preserve">
+    <value>Ne pas enregistrer</value>
+  </data>
+  <data name="Unsaved_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Dialog_OpenTitle" xml:space="preserve">
+    <value>Ouvrir un document</value>
+  </data>
+  <data name="Dialog_SaveTitle" xml:space="preserve">
+    <value>Enregistrer le document</value>
+  </data>
+  <data name="Dialog_FolderTitle" xml:space="preserve">
+    <value>Ouvrir un dossier</value>
+  </data>
+  <data name="Dialog_Filter_Markdown" xml:space="preserve">
+    <value>Documents Markdown (*.md;*.markdown;*.txt)|*.md;*.markdown;*.txt|Tous les fichiers (*.*)|*.*</value>
+  </data>
+  <data name="Feedback_Success" xml:space="preserve">
+    <value>Terminé</value>
+  </data>
+  <data name="Feedback_Info" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Feedback_Warning" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="Feedback_Danger" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Error_Unexpected" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite</value>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>Fichier introuvable</value>
+  </data>
+  <data name="Error_FileTooLarge" xml:space="preserve">
+    <value>Document trop volumineux (10 Mo maximum)</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>Chemin de fichier non valide</value>
+  </data>
+  <data name="Error_ReadFailed" xml:space="preserve">
+    <value>Impossible de lire le fichier</value>
+  </data>
+  <data name="Error_WriteFailed" xml:space="preserve">
+    <value>Impossible d'enregistrer le fichier</value>
+  </data>
+  <data name="Error_FolderReadFailed" xml:space="preserve">
+    <value>Impossible de lire le dossier</value>
+  </data>
+  <data name="Error_PreferencesLoad" xml:space="preserve">
+    <value>Préférences illisibles, valeurs par défaut utilisées</value>
+  </data>
+  <data name="Error_PreferencesSave" xml:space="preserve">
+    <value>Impossible d'enregistrer les préférences</value>
+  </data>
+  <data name="Error_PreviewTooLarge" xml:space="preserve">
+    <value>Document trop volumineux pour l'aperçu</value>
+  </data>
+  <data name="Error_PreviewFailed" xml:space="preserve">
+    <value>Impossible d'afficher l'aperçu</value>
+  </data>
+  <data name="Error_OutlineFailed" xml:space="preserve">
+    <value>Impossible de construire le plan</value>
+  </data>
+  <data name="Warning_WebViewMissing" xml:space="preserve">
+    <value>Le runtime WebView2 est absent, l'aperçu est désactivé</value>
+  </data>
+  <data name="Preview_Unavailable" xml:space="preserve">
+    <value>Aperçu indisponible : installez le runtime Microsoft Edge WebView2.</value>
+  </data>
+  <data name="Editor_Name" xml:space="preserve">
+    <value>Éditeur Markdown</value>
+  </data>
+  <data name="Preview_Name" xml:space="preserve">
+    <value>Aperçu du document</value>
+  </data>
+</root>

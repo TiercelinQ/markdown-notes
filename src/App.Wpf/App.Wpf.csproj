@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>MarkdownNotes</AssemblyName>
+    <RootNamespace>MarkdownNotes</RootNamespace>
+    <Version>1.1.0</Version> <!-- canonical version, mirrored by AppConfig.AppVersion -->
+    <!-- Multi-size icon (16 to 256 px) generated from app_icon/icon.png: executable, taskbar, title bar. -->
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="Serilog.Sinks.Debug" />
+    <PackageReference Include="Markdig" />
+    <PackageReference Include="Microsoft.Web.WebView2" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Resource accessors are written next to the .resx, never generated at build time (WPF markup pass). -->
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <!-- Same icon as a WPF resource, shown in the title bar (AppTitleBarStyle). -->
+    <Resource Include="Assets\app.ico" />
+    <!-- Preview stylesheet, read by MarkdownRenderService from the assembly manifest. -->
+    <EmbeddedResource Include="Assets\preview.css" LogicalName="MarkdownNotes.Assets.preview.css" />
+    <!-- Mermaid 11.17.2 (MIT), injected into the preview page by WebViewBehavior only when a diagram is present. The license travels with it. -->
+    <EmbeddedResource Include="Assets\mermaid.min.js" LogicalName="MarkdownNotes.Assets.mermaid.min.js" />
+    <EmbeddedResource Include="Assets\mermaid.LICENSE.txt" LogicalName="MarkdownNotes.Assets.mermaid.LICENSE.txt" />
+    <InternalsVisibleTo Include="App.Wpf.Tests" />
+    <!-- NSubstitute (Castle DynamicProxy) must see the internal service interfaces to substitute them. -->
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+</Project>

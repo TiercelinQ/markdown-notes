@@ -1,0 +1,50 @@
+<UserControl x:Class="MarkdownNotes.Views.OutlineView"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:vm="clr-namespace:MarkdownNotes.ViewModels">
+  <Border Style="{StaticResource ExplorerPaneStyle}">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ui:Button Grid.Column="0" Style="{StaticResource PaneToggleButtonStyle}" Command="{Binding TogglePaneCommand}">
+          <ui:SymbolIcon Style="{StaticResource PaneToggleIconStyle}" />
+        </ui:Button>
+        <TextBlock Grid.Column="1" Style="{StaticResource PaneTitleTextStyle}" Text="{Binding Loc[Outline_Title]}" />
+      </Grid>
+
+      <Grid Grid.Row="1">
+        <Grid.Style>
+          <Style TargetType="Grid">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding IsPaneOpen}" Value="False">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Grid.Style>
+      <TreeView Style="{StaticResource OutlineTreeStyle}"
+                AutomationProperties.Name="{Binding Loc[Outline_Title]}"
+                ItemsSource="{Binding Roots}"
+                ItemContainerStyle="{StaticResource OutlineTreeItemStyle}">
+        <TreeView.ItemTemplate>
+          <HierarchicalDataTemplate DataType="{x:Type vm:HeadingNodeViewModel}" ItemsSource="{Binding Children}">
+            <TextBlock Style="{StaticResource ExplorerNodeTextStyle}" Text="{Binding Text}" />
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+
+      <TextBlock Style="{StaticResource OutlineEmptyStateTextStyle}" Text="{Binding Loc[Outline_Empty]}" />
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>

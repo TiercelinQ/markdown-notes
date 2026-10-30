@@ -1,0 +1,21 @@
+/* Preview page styles. No color literal: system colors follow the color scheme that the host aligns on the app theme. */
+:root { color-scheme: light dark; }
+html { background: Canvas; color: CanvasText; }
+body { font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif; font-size: 1rem; line-height: 1.6; margin: 0; padding: 1.5rem; overflow-wrap: anywhere; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin: 1.5em 0 0.5em; }
+h1 { font-size: 2em; padding-bottom: 0.3em; border-bottom: 1px solid GrayText; }
+h2 { font-size: 1.5em; padding-bottom: 0.3em; border-bottom: 1px solid GrayText; }
+h3 { font-size: 1.25em; }
+p, ul, ol, blockquote, pre, table { margin: 0 0 1em; }
+a { color: LinkText; }
+blockquote { margin-left: 0; padding: 0 1em; border-left: 0.25em solid GrayText; color: GrayText; }
+code, pre { font-family: "Cascadia Mono", Consolas, monospace; font-size: 0.9em; }
+code { padding: 0.1em 0.3em; border: 1px solid GrayText; border-radius: 0.25em; }
+pre { padding: 1em; overflow: auto; border: 1px solid GrayText; border-radius: 0.5em; }
+pre code { padding: 0; border: 0; }
+table { border-collapse: collapse; }
+th, td { padding: 0.4em 0.8em; border: 1px solid GrayText; }
+img { max-width: 100%; }
+hr { border: 0; border-top: 1px solid GrayText; }
+.mermaid { margin: 0 0 1em; text-align: center; white-space: pre; font-family: "Cascadia Mono", Consolas, monospace; }
+.mermaid svg { max-width: 100%; height: auto; }

@@ -1,0 +1,69 @@
+<UserControl x:Class="MarkdownNotes.Views.Layout.FormatToolBar"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:models="clr-namespace:MarkdownNotes.Models">
+  <Border Style="{StaticResource FormatToolBarStyle}">
+    <StackPanel Orientation="Horizontal">
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding SaveCommand}"
+                 ToolTip="{Binding Loc[Menu_File_Save]}" AutomationProperties.Name="{Binding Loc[Menu_File_Save]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="Save24" />
+      </ui:Button>
+      <Border Style="{StaticResource ToolBarDividerStyle}" />
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Bold}"
+                 ToolTip="{Binding Loc[Format_Bold]}" AutomationProperties.Name="{Binding Loc[Format_Bold]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextBold24" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Italic}"
+                 ToolTip="{Binding Loc[Format_Italic]}" AutomationProperties.Name="{Binding Loc[Format_Italic]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextItalic24" />
+      </ui:Button>
+      <Border Style="{StaticResource ToolBarDividerStyle}" />
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Heading1}"
+                 ToolTip="{Binding Loc[Format_Heading1]}" AutomationProperties.Name="{Binding Loc[Format_Heading1]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextHeader124" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Heading2}"
+                 ToolTip="{Binding Loc[Format_Heading2]}" AutomationProperties.Name="{Binding Loc[Format_Heading2]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextHeader224" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Heading3}"
+                 ToolTip="{Binding Loc[Format_Heading3]}" AutomationProperties.Name="{Binding Loc[Format_Heading3]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextHeader324" />
+      </ui:Button>
+      <Border Style="{StaticResource ToolBarDividerStyle}" />
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.BulletList}"
+                 ToolTip="{Binding Loc[Format_BulletList]}" AutomationProperties.Name="{Binding Loc[Format_BulletList]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextBulletListLtr24" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.NumberedList}"
+                 ToolTip="{Binding Loc[Format_NumberedList]}" AutomationProperties.Name="{Binding Loc[Format_NumberedList]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextNumberListLtr24" />
+      </ui:Button>
+      <Border Style="{StaticResource ToolBarDividerStyle}" />
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Link}"
+                 ToolTip="{Binding Loc[Format_Link]}" AutomationProperties.Name="{Binding Loc[Format_Link]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="Link24" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Code}"
+                 ToolTip="{Binding Loc[Format_Code]}" AutomationProperties.Name="{Binding Loc[Format_Code]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="Code24" />
+      </ui:Button>
+      <ui:Button Style="{StaticResource ToolBarButtonStyle}" Command="{Binding Editor.FormatCommand}"
+                 CommandParameter="{x:Static models:FormatKind.Quote}"
+                 ToolTip="{Binding Loc[Format_Quote]}" AutomationProperties.Name="{Binding Loc[Format_Quote]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="TextQuote24" />
+      </ui:Button>
+    </StackPanel>
+  </Border>
+</UserControl>

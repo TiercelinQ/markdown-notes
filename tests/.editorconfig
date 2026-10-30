@@ -1,0 +1,8 @@
+# Test-only analyzer settings. The root .editorconfig still applies.
+[*.cs]
+# CA1707: test names are explicit French behavior sentences with underscores (rules/tests.md).
+dotnet_diagnostic.CA1707.severity = none
+# CA1515: xunit.v3 requires public test classes, and a test project is an executable.
+dotnet_diagnostic.CA1515.severity = none
+# CS1591: public test classes need no XML documentation (the build still generates the file, IDE0005 requires it).
+dotnet_diagnostic.CS1591.severity = none

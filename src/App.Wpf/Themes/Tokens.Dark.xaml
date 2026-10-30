@@ -1,0 +1,5 @@
+<!-- Tokens.Dark.xaml - Markdown Notes v1.0.0
+     Dark palette role overrides. The project overrides no Fluent brush (accent only),
+     so this dictionary is empty; it exists so the theme swap replaces a real dictionary. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" />

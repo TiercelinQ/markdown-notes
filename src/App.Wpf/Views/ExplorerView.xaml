@@ -1,0 +1,63 @@
+<UserControl x:Class="MarkdownNotes.Views.ExplorerView"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:vm="clr-namespace:MarkdownNotes.ViewModels">
+  <Border Style="{StaticResource ExplorerPaneStyle}">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <ui:Button Grid.Column="0" Style="{StaticResource PaneToggleButtonStyle}" Command="{Binding TogglePaneCommand}">
+          <ui:SymbolIcon Style="{StaticResource PaneToggleIconStyle}" />
+        </ui:Button>
+        <TextBlock Grid.Column="1" Style="{StaticResource PaneTitleTextStyle}" Text="{Binding Loc[Explorer_Title]}" />
+        <ui:Button Grid.Column="2" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding RefreshCommand}"
+                   ToolTip="{Binding Loc[Explorer_Refresh]}" AutomationProperties.Name="{Binding Loc[Explorer_Refresh]}">
+          <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="ArrowClockwise24" />
+        </ui:Button>
+      </Grid>
+
+      <Grid Grid.Row="1">
+        <Grid.Style>
+          <Style TargetType="Grid">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding IsPaneOpen}" Value="False">
+                <Setter Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Grid.Style>
+      <TreeView Style="{StaticResource ExplorerTreeStyle}"
+                AutomationProperties.Name="{Binding Loc[Explorer_Title]}"
+                ItemsSource="{Binding Roots}"
+                ItemContainerStyle="{StaticResource ExplorerTreeItemStyle}">
+        <TreeView.ItemTemplate>
+          <HierarchicalDataTemplate DataType="{x:Type vm:FolderNodeViewModel}" ItemsSource="{Binding Children}">
+            <StackPanel Orientation="Horizontal">
+              <ui:SymbolIcon Style="{StaticResource ExplorerNodeIconStyle}" />
+              <TextBlock Style="{StaticResource ExplorerNodeTextStyle}" Text="{Binding Name}" />
+            </StackPanel>
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+
+      <StackPanel Style="{StaticResource ExplorerEmptyStateStyle}">
+        <TextBlock Style="{StaticResource EmptyStateTextStyle}" Text="{Binding Loc[Explorer_Empty]}" />
+        <ui:Button Style="{StaticResource BarButtonStyle}"
+                   Command="{Binding DataContext.OpenFolderCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                   Content="{Binding Loc[Explorer_OpenFolder]}" />
+      </StackPanel>
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>

@@ -1,0 +1,102 @@
+<ui:FluentWindow x:Class="MarkdownNotes.Views.MainWindow"
+                 x:ClassModifier="internal"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:models="clr-namespace:MarkdownNotes.Models"
+                 xmlns:views="clr-namespace:MarkdownNotes.Views"
+                 xmlns:layout="clr-namespace:MarkdownNotes.Views.Layout"
+                 xmlns:behaviors="clr-namespace:MarkdownNotes.Views.Behaviors"
+                 Style="{StaticResource AppWindowStyle}"
+                 Title="{Binding Title}"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica"
+                 behaviors:FileDropBehavior.Command="{Binding OpenPathCommand}">
+  <ui:FluentWindow.InputBindings>
+    <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding NewCommand}" />
+    <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding OpenCommand}" />
+    <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding SaveCommand}" />
+    <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="{Binding SaveAsCommand}" />
+    <KeyBinding Key="F" Modifiers="Ctrl" Command="{Binding ShowFindCommand}" />
+    <KeyBinding Key="H" Modifiers="Ctrl" Command="{Binding ShowReplaceCommand}" />
+    <KeyBinding Key="B" Modifiers="Ctrl" Command="{Binding Editor.FormatCommand}" CommandParameter="{x:Static models:FormatKind.Bold}" />
+    <KeyBinding Key="I" Modifiers="Ctrl" Command="{Binding Editor.FormatCommand}" CommandParameter="{x:Static models:FormatKind.Italic}" />
+    <KeyBinding Key="K" Modifiers="Ctrl" Command="{Binding Editor.FormatCommand}" CommandParameter="{x:Static models:FormatKind.Link}" />
+  </ui:FluentWindow.InputBindings>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <ui:TitleBar x:Name="AppTitleBar" Grid.Row="0" Style="{StaticResource AppTitleBarStyle}" Title="{Binding Title}" />
+    <layout:AppMenuBar Grid.Row="1" />
+    <layout:FormatToolBar Grid.Row="2" />
+
+    <Grid Grid.Row="3">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition behaviors:PaneColumnBehavior.IsOpen="{Binding ExplorerVisible}"
+                          behaviors:PaneColumnBehavior.OpenWidth="{StaticResource ExplorerPaneWidth}"
+                          behaviors:PaneColumnBehavior.MinOpenWidth="{StaticResource ExplorerPaneMinWidth}" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Border Style="{StaticResource ExplorerSlotStyle}">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <behaviors:SplitPaneBehavior.FirstOpen>
+            <Binding Path="Explorer.IsPaneOpen" />
+          </behaviors:SplitPaneBehavior.FirstOpen>
+          <behaviors:SplitPaneBehavior.SecondOpen>
+            <Binding Path="Outline.IsPaneOpen" />
+          </behaviors:SplitPaneBehavior.SecondOpen>
+
+          <views:ExplorerView Grid.Row="0" DataContext="{Binding Explorer}" />
+          <GridSplitter Style="{StaticResource PaneRowSplitterStyle}" ResizeDirection="Rows" ResizeBehavior="PreviousAndNext" />
+          <views:OutlineView Grid.Row="2" DataContext="{Binding Outline}" />
+        </Grid>
+      </Border>
+
+      <GridSplitter Style="{StaticResource ExplorerColumnSplitterStyle}" />
+
+      <Grid Grid.Column="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <views:FindReplaceBar Grid.Row="0" DataContext="{Binding FindReplace}" />
+
+        <Grid Grid.Row="1">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+          <Border Style="{StaticResource EditorSlotStyle}">
+            <views:EditorView x:Name="EditorPane" DataContext="{Binding Editor}" />
+          </Border>
+          <GridSplitter Style="{StaticResource PaneSplitterStyle}" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext" />
+          <Border Style="{StaticResource PreviewSlotStyle}">
+            <views:PreviewView DataContext="{Binding Preview}" />
+          </Border>
+        </Grid>
+      </Grid>
+    </Grid>
+
+    <layout:StatusBar Grid.Row="4" />
+
+    <ui:ContentDialogHost x:Name="DialogHost" Grid.Row="0" Grid.RowSpan="5" Panel.ZIndex="{StaticResource ZDialog}" />
+    <ui:SnackbarPresenter x:Name="SnackbarHost" Grid.Row="0" Grid.RowSpan="5" Style="{StaticResource SnackbarBottomRightStyle}" />
+  </Grid>
+</ui:FluentWindow>

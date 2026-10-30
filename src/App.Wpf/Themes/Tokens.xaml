@@ -1,0 +1,54 @@
+<!-- ============================================================
+     Tokens.xaml - Markdown Notes v1.0.0
+     Reference: design-system.md v1.0 (WPF) - project palette
+     Brushes are not aliased here: Styles.xaml consumes the Fluent brushes
+     (and the accent written by ApplicationAccentColorManager) directly.
+     ============================================================ -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+  <!-- TYPOGRAPHY -->
+  <FontFamily x:Key="FontFamilyDefault">Segoe UI Variable Text, Segoe UI, Segoe UI Variable Display</FontFamily>
+  <FontFamily x:Key="FontFamilyMono">Cascadia Mono, Consolas</FontFamily>
+  <sys:Double x:Key="FontSizeXs">12</sys:Double>
+  <sys:Double x:Key="FontSizeSm">14</sys:Double>
+  <FontWeight x:Key="FontWeightMedium">Medium</FontWeight>
+  <FontWeight x:Key="FontWeightSemiBold">SemiBold</FontWeight>
+
+  <!-- SPACING -->
+  <Thickness x:Key="Spacing1">4</Thickness>
+  <Thickness x:Key="Spacing2">8</Thickness>
+  <Thickness x:Key="Spacing3">12</Thickness>
+  <Thickness x:Key="Spacing4">16</Thickness>
+  <Thickness x:Key="Spacing1Horizontal">4,0</Thickness>
+  <Thickness x:Key="Spacing3Horizontal">12,0</Thickness>
+  <Thickness x:Key="Spacing1Vertical">0,4</Thickness>
+
+  <!-- FIXED SIZES -->
+  <sys:Double x:Key="TitleBarHeight">48</sys:Double>
+  <sys:Double x:Key="DialogContentMinWidth">400</sys:Double>
+  <sys:Double x:Key="MenuBarHeight">32</sys:Double>
+  <Thickness x:Key="MenuTopLevelPadding">12,4</Thickness>
+  <sys:Double x:Key="StatusBarHeight">28</sys:Double>
+  <sys:Double x:Key="ExplorerPaneWidth">280</sys:Double>
+  <sys:Double x:Key="ExplorerPaneMinWidth">160</sys:Double>
+  <sys:Double x:Key="SplitterWidth">4</sys:Double>
+  <sys:Double x:Key="SnackbarWidth">360</sys:Double>
+  <sys:Double x:Key="IconSizeSm">16</sys:Double>
+  <sys:Double x:Key="IconSizeMd">20</sys:Double>
+
+  <!-- SHAPE -->
+  <CornerRadius x:Key="CornerRadiusSm">4</CornerRadius>
+  <CornerRadius x:Key="CornerRadiusMd">8</CornerRadius>
+  <Thickness x:Key="BorderNone">0</Thickness>
+  <Thickness x:Key="BorderAll">1</Thickness>
+  <Thickness x:Key="BorderBottom">0,0,0,1</Thickness>
+  <Thickness x:Key="BorderTop">0,1,0,0</Thickness>
+  <Thickness x:Key="BorderRight">0,0,1,0</Thickness>
+  <sys:Double x:Key="BorderWidth">1</sys:Double>
+
+  <!-- Z-ORDER -->
+  <sys:Int32 x:Key="ZDialog">210</sys:Int32>
+  <sys:Int32 x:Key="ZSnackbar">400</sys:Int32>
+</ResourceDictionary>

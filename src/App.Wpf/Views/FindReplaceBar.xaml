@@ -1,0 +1,67 @@
+<UserControl x:Class="MarkdownNotes.Views.FindReplaceBar"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+  <Border Style="{StaticResource FindReplaceBarStyle}" IsVisibleChanged="OnBarVisibleChanged">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <ui:TextBox x:Name="QueryBox" Grid.Row="0" Grid.Column="0" Style="{StaticResource FindTextBoxStyle}"
+                  PlaceholderText="{Binding Loc[Find_Query]}"
+                  AutomationProperties.Name="{Binding Loc[Find_Query]}"
+                  Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}">
+        <ui:TextBox.InputBindings>
+          <KeyBinding Key="Enter" Command="{Binding FindNextCommand}" />
+          <KeyBinding Key="Enter" Modifiers="Shift" Command="{Binding FindPreviousCommand}" />
+          <KeyBinding Key="Escape" Command="{Binding CloseCommand}" />
+        </ui:TextBox.InputBindings>
+      </ui:TextBox>
+      <ui:Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding FindPreviousCommand}"
+                 ToolTip="{Binding Loc[Find_Previous]}" AutomationProperties.Name="{Binding Loc[Find_Previous]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="ArrowUp24" />
+      </ui:Button>
+      <ui:Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding FindNextCommand}"
+                 ToolTip="{Binding Loc[Find_Next]}" AutomationProperties.Name="{Binding Loc[Find_Next]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="ArrowDown24" />
+      </ui:Button>
+      <CheckBox Grid.Row="0" Grid.Column="3" Style="{StaticResource BarCheckBoxStyle}"
+                Content="{Binding Loc[Find_MatchCase]}" IsChecked="{Binding MatchCase}" />
+      <ui:Button Grid.Row="0" Grid.Column="4" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding CloseCommand}"
+                 ToolTip="{Binding Loc[Find_Close]}" AutomationProperties.Name="{Binding Loc[Find_Close]}">
+        <ui:SymbolIcon Style="{StaticResource ToolBarIconStyle}" Symbol="Dismiss24" />
+      </ui:Button>
+
+      <Grid Grid.Row="1" Grid.ColumnSpan="5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <ui:TextBox Grid.Column="0" Style="{StaticResource FindTextBoxStyle}"
+                    PlaceholderText="{Binding Loc[Find_Replacement]}"
+                    AutomationProperties.Name="{Binding Loc[Find_Replacement]}"
+                    Text="{Binding Replacement, UpdateSourceTrigger=PropertyChanged}"
+                    Visibility="{Binding IsReplaceVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <ui:Button Grid.Column="1" Style="{StaticResource BarButtonStyle}" Command="{Binding ReplaceCommand}"
+                   Content="{Binding Loc[Find_Replace]}"
+                   Visibility="{Binding IsReplaceVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <ui:Button Grid.Column="2" Style="{StaticResource BarButtonStyle}" Command="{Binding ReplaceAllCommand}"
+                   Content="{Binding Loc[Find_ReplaceAll]}"
+                   Visibility="{Binding IsReplaceVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <TextBlock Grid.Column="3" Style="{StaticResource StatusBarTextStyle}" Text="{Binding StatusText}" />
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>
