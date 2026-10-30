@@ -14,7 +14,7 @@ internal static class AppConfig
     public const string AppDisplayName = "Markdown Notes";
 
     /// <summary>Mirror of the <c>.csproj</c> version.</summary>
-    public const string AppVersion = "1.1.0";
+    public const string AppVersion = "1.2.0";
 
     // Accent (design-system.md section 2): the only color literal in C#
 

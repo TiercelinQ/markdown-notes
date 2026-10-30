@@ -4,7 +4,7 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>MarkdownNotes</AssemblyName>
     <RootNamespace>MarkdownNotes</RootNamespace>
-    <Version>1.1.0</Version> <!-- canonical version, mirrored by AppConfig.AppVersion -->
+    <Version>1.2.0</Version> <!-- canonical version, mirrored by AppConfig.AppVersion -->
     <!-- Multi-size icon (16 to 256 px) generated from app_icon/icon.png: executable, taskbar, title bar. -->
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
   </PropertyGroup>

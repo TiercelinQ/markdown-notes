@@ -1,4 +1,4 @@
-# Markdown Notes - v1.1.0
+# Markdown Notes - v1.2.0
 
 ## Objective
 
