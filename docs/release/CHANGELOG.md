@@ -7,6 +7,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 ### Added
 - MIT license (`LICENSE`), with the third-party notices listed in the README.
 
+## [1.2.0] - 2026-10-30
+### Added
+- MIT license (`LICENSE`), with the third-party notices listed in the README.
+
 ## [1.1.0] - 2026-10-30
 ### Added
 - The explorer and the outline can each be collapsed. Their titles stay visible.
